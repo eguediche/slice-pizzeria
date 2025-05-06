@@ -24,25 +24,32 @@ function renderBasketAside() {
     mainWrapper.appendChild(aside);
   }
   
-  const pizzas = [
-    {
-      name: "Margherita",
-      price: "$16.99",
-      image: "https://cdn.dummyjson.com/recipe-images/1.webp",
-      description: "Tomate, mozzarella, basilic"
-    },
-    {
-      name: "Pepperoni",
-      price: "$17.99",
-      image: "https://cdn.dummyjson.com/recipe-images/2.webp",
-      description: "Tomate, mozzarella, pepperoni"
-    },
-    {
-      name: "4 Fromages",
-      price: "$18.99",
-      image: "https://cdn.dummyjson.com/recipe-images/3.webp",
-      description: "Mozzarella, gorgonzola, chèvre, parmesan"
-    }
+  const pizzas =
+    [
+        {
+            "id": "66f97356-f31c-4cc5-803a-7c42b25758e0",
+            "name": "The Godfather Pizza",
+            "description": "Gourmet Italian sausage, fresh garlic, onions & our hot giardiniera.",
+            "price": 15,
+            "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+            "category": {
+                "id": "c8755d47-4595-4768-9b0a-4cdc2fa92dd9",
+                "name": "pizza",
+                "description": "High qualities Pizza with organic ingredients and good vibes."
+            }
+        },
+        {
+            "id": "08857e40-181e-4e38-a336-22c77f532fb4",
+            "name": "The Veggie Pizza",
+            "description": "Vegetarian. Mushrooms, onions & green peppers with tomatoes on top.",
+            "price": 13,
+            "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+            "category": {
+                "id": "c8755d47-4595-4768-9b0a-4cdc2fa92dd9",
+                "name": "pizza",
+                "description": "High qualities Pizza with organic ingredients and good vibes."
+            }
+        },
   ];
   
   renderBasketAside();

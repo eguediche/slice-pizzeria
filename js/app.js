@@ -33,6 +33,36 @@ function renderBasketAside() {
 	mainWrapper.appendChild(aside);
 }
 
+function createPanier(name, counter, price, total) {
+    const divTotal = createElement("div", { className: "baskets-with-pizza" });
+
+    const ul = createElement("ul", { className: "basket-products" });
+    divTotal.appendChild(ul);
+
+    const liItem = createElement("li", { className: "basket-product-item" });
+    ul.appendChild(liItem);
+
+    const spanName = createElement("span", { className: "basket-product-item-name" }, name);
+    liItem.appendChild(spanName);
+
+    const spanDetails = createElement("span", { className: "basket-product-details" });
+    liItem.appendChild(spanDetails);
+
+    const spanQuantity = createElement("span", { className: "basket-product-details-quantity" }, counter);
+    spanDetails.appendChild(spanQuantity);
+
+    const spanPrice = createElement("span", { className: "basket-product-details-unit-price" }, price);
+    spanDetails.appendChild(spanPrice);
+
+    const spanPriceTotal = createElement("span", { className: "basket-product-details-total-price" }, total);
+    spanDetails.appendChild(spanPriceTotal);
+
+    const imgRemove = createElement("img", { src: "../images/remove-icon.svg", alt: "remove", className: "basket-product-remove-icon" });
+    liItem.appendChild(imgRemove);
+
+    return divTotal;
+}
+
 function renderPizzas(pizzaList) {
 	const container = document.querySelector(".pizzas-wrapper");
 	container.innerHTML = "";

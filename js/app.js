@@ -1,16 +1,6 @@
 async function test() {
-	const res = await fetch("http://localhost:3000/orders", {
-		method: "POST",
-		headers: {
-			Authorization: "Bearer VOTRE_TOKEN_ICI",
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			products: [
-				{ uuid: "3d684bbd-227a-45ff-b607-58eab1067598", quantity: 2 },
-				{ uuid: "fff85a88-5296-43cd-9618-cacfb3a0324b", quantity: 1 },
-			],
-		}),
+	const res = await fetch("http://51.38.232.174:3001/products", {
+		method: "GET",
 	});
 	const pizzas = await res.json();
 
@@ -70,9 +60,12 @@ function renderPizzas(pizzaList) {
 	}
 }
 
-const pizzas = test();
+document.addEventListener("DOMContentLoaded", async () => {
+	const pizzas = await test();
+	console.log(pizzas);
 
-renderBasketAside();
+	renderBasketAside();
 
-// le .then(data)  si data c l'a ou ya les donner tu change renderPizzas(data)
-renderPizzas(pizzas);
+	// le .then(data)  si data c l'a ou ya les donner tu change renderPizzas(data)
+	renderPizzas(pizzas);
+});
